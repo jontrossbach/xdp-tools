@@ -1,0 +1,22 @@
+summary: Run make all target from Makefile using packet.dev CI
+
+prepare:
+  - name: packages
+    how: install
+    package:
+    # ~Minimum dependecies for configure script and makefile selftests
+    - bpftool
+    - clang
+    - elfutils-libelf
+    - elfutils-libelf-devel
+    - libbpf
+    - libbpf-devel
+    - llvm
+    - libpcap
+    - libpcap-devel
+    - m4
+    - sqlite-devel
+    - zlib-devel
+    - git
+
+test: ./test.sh

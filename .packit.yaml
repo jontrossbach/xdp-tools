@@ -1,0 +1,40 @@
+upstream_package_name: xdp-tools
+# downstream_package_name: xpt-tools
+upstream_project_url: https://github.com/xdp-project/xdp-tools
+
+jobs:
+
+- job: tests
+  trigger: pull_request
+  targets:
+    centos-stream-9-x86_64:
+      distros: [RHEL-9.3.0-Nightly]
+  use_internal_tf: True
+  skip_build: True
+  tf_extra_params:
+    environments:
+      - settings:
+          provisioning:
+            tags:
+              BusinessUnit: sst_networking
+
+                #- job: tests
+                #  trigger: pull_request
+                #  targets:
+                #    centos-stream-8-x86_64:
+                #      distros: [RHEL-8.9.0-Nightly]
+                #  use_internal_tf: True
+                #  skip_build: True
+                #  tf_extra_params:
+                #    environments:
+                #      - settings:
+                #          provisioning:
+                #            tags:
+                #              BusinessUnit: sst_networking
+                #
+                #- job: tests
+                #  trigger: pull_request
+                #  targets:
+                #    epel-8-x86_64:
+                #      distros: [centos-8]
+                #  skip_build: True

@@ -1,5 +1,5 @@
 upstream_package_name: xdp-tools
-# downstream_package_name: xpt-tools
+# downstream_package_name: xdp-tools
 upstream_project_url: https://github.com/xdp-project/xdp-tools
 
 jobs:
@@ -9,7 +9,7 @@ jobs:
   targets:
     centos-stream-9-x86_64:
       distros: [RHEL-9.3.0-Nightly]
-  tmt_plan: ./plans/selftest.tmt
+        #tmt_plan: ./plans/selftest.tmt
   use_internal_tf: True
   skip_build: True
   tf_extra_params:

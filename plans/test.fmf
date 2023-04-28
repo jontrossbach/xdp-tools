@@ -1,6 +1,6 @@
 summary: >
-      Run make all target from Makefile using packit.dev CI, i.e.
-      see .packit.yaml file
+      Run make all target from Makefile using Packit.dev CI, i.e.
+      see the .packit.yaml file
 
 test: ./test.sh
 
@@ -21,4 +21,6 @@ prepare:
     - m4
     - sqlite-devel
     - zlib-devel
+    # Other stuff
     - git
+    - pkg-config
